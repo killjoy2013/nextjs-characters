@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  font-size: large;
+  background-color: var(--light-background);
+  color: var(--dark-font);
+  align-items: center;
+  border-radius: 10px;
+  margin: 4px;
+  padding: 4px 8px 4px 8px;
+}
+
+.text {
+  padding: 6px;
+}
+
+.icon {
+  background-color: var(--dark-background);
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.container:focus {
+  display: flex;
+  font-size: large;
+  background-color: aqua;
+  color: var(--dark-font);
+  align-items: center;
+  border-radius: 10px;
+  margin: 4px;
+  padding: 4px 8px 4px 8px;
+}

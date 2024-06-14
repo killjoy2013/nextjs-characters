@@ -1,0 +1,13 @@
+.loading_container {
+  display: flex;
+  border: 1px solid var(--border-color);
+  flex: 1;
+  align-items: center;
+  font-size: medium;
+  color: var(--light-font);
+}
+
+.icon {
+  margin-left: 8px;
+  margin-right: 8px;
+}

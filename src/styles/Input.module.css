@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  border-color: #94a3b8;
+  border-style: solid;
+  border-radius: 16px;
+  padding: 6px;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  border-width: 0;
+  outline: none;
+  height: 48px;
+  font-size: large;
+}
+
+.input_block {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: stretch;
+  flex: 1;
+}

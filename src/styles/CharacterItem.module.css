@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  border: 1px solid var(--border-color);
+  flex: 1;
+  align-items: center;
+  outline-style: none;
+}
+
+.container + .container {
+  border-top-style: hidden;
+}
+
+.container:hover {
+  cursor: pointer;
+  background-color: var(--neutral-color);
+  outline-style: none;
+}
+
+.container + .container:hover {
+  border-bottom-style: hidden;
+}
+
+.container:focus {
+  background-color: var(--focused-color);
+}
+
+.line_block {
+  display: grid;
+  gap: 6px;
+}
+
+.name {
+  font-size: large;
+  color: var(--dark-font);
+}
+
+.episode {
+  font-size: medium;
+  color: var(--light-font);
+}
+
+.checkbox {
+  margin: 12px;
+}
+
+.image {
+  border-radius: 8px;
+  margin-right: 12px;
+}
