@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { CharacterItem } from "@/components/CharacterItem";
 import { CharacterType } from "@/interfaces";
-import { DropdownContext } from "../../src/components/Dropdown/Context";
+import * as dropdownContext from "../../src/components/Dropdown/Context";
 
 jest.mock("../../src/components/Dropdown/Context", () => ({
   useDropdownContext: () => ({
@@ -15,6 +15,10 @@ jest.mock("../../src/components/Dropdown/Context", () => ({
 
 describe("Character display", () => {
   it("should display correct character name", () => {
+    // jest.spyOn(dropdownContext, "useDropdownContext").mockReturnValue({
+    //   search: "",
+    // });
+
     const character: CharacterType = {
       episode: ["first", "second"],
       id: 1,
