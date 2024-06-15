@@ -7,7 +7,6 @@ import { useDropdownContext } from "./Dropdown/Context";
 
 interface CharacterItemProps {
   character: CharacterType;
-  search: string;
   style: React.CSSProperties;
   toggleSelect: (selected: boolean, id: number) => void;
 }
@@ -22,13 +21,12 @@ function getReplacedName(name: string, search: string): string {
 
 export const CharacterItem: FC<CharacterItemProps> = ({
   character,
-  search,
   style,
   toggleSelect,
 }) => {
   const { id, episode, name, selected, index, image } = character;
 
-  const { focusedIndex, setFocusedIndex, setSelectedFocusedIndex } =
+  const { focusedIndex, setFocusedIndex, setSelectedFocusedIndex, search } =
     useDropdownContext();
 
   const componentRef = useRef<HTMLDivElement | null>(null);

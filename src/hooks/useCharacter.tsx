@@ -116,7 +116,6 @@ export function useCharacter() {
     <CharacterItem
       style={others.style}
       character={item}
-      search={others.search}
       toggleSelect={handleToggleSelect}
     />
   );
