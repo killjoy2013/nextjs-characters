@@ -1,5 +1,6 @@
 "use client";
 import Dropdown from "@/components/Dropdown";
+import Wrapper from "@/components/Wrapper";
 import { useCharacter } from "@/hooks/useCharacter";
 import { useDebounce } from "@/hooks/useDebounce";
 import styles from "@/styles/Page.module.css";

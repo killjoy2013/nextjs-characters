@@ -10,7 +10,7 @@ import {
 import { FixedSizeList } from "react-window";
 import { isNumber } from "@/utils";
 
-interface IState {
+export interface IState {
   search: string;
   itemCount: number;
   selectedItemCount: number;
@@ -33,7 +33,7 @@ interface IState {
   listRef: MutableRefObject<FixedSizeList | null>;
 }
 
-interface IProvider {
+export interface IProvider {
   search: string;
   children: React.ReactNode;
   itemCount: number;
@@ -121,31 +121,31 @@ const DropdownProvider: FC<IProvider> = ({
     if (isNumber(focusedIndex)) toggleSelectFocused(focusedIndex);
   };
 
+  const value = {
+    search,
+    open,
+    setOpen,
+    itemCount,
+    selectedItemCount,
+    focusedIndex,
+    setFocusedIndex,
+    increaseFocusIndex,
+    decreaseFocusIndex,
+    toggleSelectFocused: toggleSelectFocusedHandler,
+    toggleSelect,
+    remove,
+    removeFocused,
+    setSelectedFocusedIndex,
+    selectedFocusedIndex,
+    increaseSelectedFocusIndex,
+    decreaseSelectedFocusIndex,
+    inputRef,
+    componentRef,
+    listRef,
+  };
+
   return (
-    <DropdownContext.Provider
-      value={{
-        search,
-        open,
-        setOpen,
-        itemCount,
-        selectedItemCount,
-        focusedIndex,
-        setFocusedIndex,
-        increaseFocusIndex,
-        decreaseFocusIndex,
-        toggleSelectFocused: toggleSelectFocusedHandler,
-        toggleSelect,
-        remove,
-        removeFocused,
-        setSelectedFocusedIndex,
-        selectedFocusedIndex,
-        increaseSelectedFocusIndex,
-        decreaseSelectedFocusIndex,
-        inputRef,
-        componentRef,
-        listRef,
-      }}
-    >
+    <DropdownContext.Provider value={value}>
       {children}
     </DropdownContext.Provider>
   );

@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import { Loading } from "@/components/Dropdown/Loading";
 
 describe("group", () => {
