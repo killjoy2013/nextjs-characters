@@ -1,8 +1,6 @@
-import { render, screen } from "@testing-library/react";
 import { CharacterItem } from "@/components/CharacterItem";
-import { CharacterType } from "@/interfaces";
-import { DropdownProvider, IProvider } from "@/components/Dropdown/Context";
-import Wrapper from "@/components/Wrapper";
+import { DropdownProvider } from "@/components/Dropdown/Context";
+import { render, screen } from "@testing-library/react";
 import { createCharacter, createProviderProps } from "__tests__/testUtils";
 
 describe("Character display", () => {

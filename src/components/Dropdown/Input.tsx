@@ -13,12 +13,6 @@ interface InputProps {
 export const Input: FC<InputProps> = ({ onValueChange, selectedItems }) => {
   const { setFocusedIndex, open, setOpen, inputRef } = useDropdownContext();
 
-  // const moveCaretAtEnd = (e: React.FocusEvent<HTMLInputElement, Element>) => {
-  //   const temp_value = e.target.value;
-  //   e.target.value = "";
-  //   e.target.value = temp_value;
-  // };
-
   const moveCaretAtEnd = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     const input = e.target;
     const length = input.value.length;
