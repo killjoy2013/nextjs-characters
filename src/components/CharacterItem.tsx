@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { FC, useEffect, useRef } from "react";
 import ReactHtmlParser from "react-html-parser";
 import { CharacterType } from "@/interfaces";
@@ -7,6 +8,7 @@ import { useDropdownContext } from "./Dropdown/Context";
 
 interface CharacterItemProps {
   character: CharacterType;
+
   style: React.CSSProperties;
   toggleSelect: (selected: boolean, id: number) => void;
 }
@@ -59,13 +61,13 @@ export const CharacterItem: FC<CharacterItemProps> = ({
         checked={selected}
         onChange={() => toggleHandler()}
       ></input>
-      <img
+      <Image
         src={image}
         height={40}
         width={40}
         className={styles.image}
         alt={name}
-      ></img>
+      ></Image>
       <div className={styles.line_block}>
         <div className={styles.name}>{ReactHtmlParser(replacedName)}</div>
         <div className={styles.episode}>{`${episode?.length} Episodes`}</div>

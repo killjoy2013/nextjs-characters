@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { CharacterType } from "../../interfaces";
 
-type CharacterResponse = {
+export type CharacterResponse = {
   info: {
     count: number;
     next: string;
     pages: number;
-    prev: string;
+    prev: string | null;
   };
   results: Array<CharacterType>;
 };

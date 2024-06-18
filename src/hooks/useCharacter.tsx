@@ -73,7 +73,7 @@ export function useCharacter() {
     }));
   });
 
-  const [trigger, { isError: isLazyError, isFetching: isLazyFetching }] =
+  const [trigger, { data, isError: isLazyError, isFetching: isLazyFetching }] =
     useLazySearchedCharactersQuery();
 
   const loadNextPage = (rows: number) => {
