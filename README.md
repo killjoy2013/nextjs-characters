@@ -1,8 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Deployed application [https://nextjs-characters.vercel.app/](https://nextjs-characters.vercel.app)
+
+Screencast to display the usage [https://drive.google.com/file/d/1grIdS6k6eHftfUG-0BnvV6JWD_Gnl1s1/view?usp=sharing](https://drive.google.com/file/d/1grIdS6k6eHftfUG-0BnvV6JWD_Gnl1s1/view?usp=sharinghttps:/)
+
+This project is created with
+
+```json
+node v20.12.0
+npm 10.5.0
+```
+
+You can run with commands
 
 ```bash
 npm run dev
@@ -16,21 +25,28 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About Dropdown component
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- We used Redux Toolkit to manage state.
+- http requests are sent with RTK Query.
+- Dropdown component is created as a generic component. It has no dependency to character data structure and can be used with a different api & its data structure.
+- We created a `useCharacter` hook to encapsulate the logic related to Redux state.
+- When we need to use this component with any other source api, we just need to create a similar hook, like `useProducts` and define the shape of the Row to display.
 
-## Learn More
+## Using the Dropdown component
 
-To learn more about Next.js, take a look at the following resources:
+It can be used in two ways; with mouse or keyboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Keyboard shortcuts:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Cursor down => open dropdown & change focus to character list & navigate downwards
+- Escape => close dropdown
+- Cursor up => navigate upwards & when on the top of the list, focus on the input
+- spacebar => toggle selection on the list
+- Shift + Cursor Up => scroll the list to top & focus on the input
 
-## Deploy on Vercel
+## when the focus on the input;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Shift + Cursor Left => Focus on first selected item
+- Cursor Left & Cursor Right => navigate among selected items
+- Spacebar => remove item from selection
